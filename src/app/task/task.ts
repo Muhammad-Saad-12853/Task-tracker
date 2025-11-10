@@ -1,7 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-import { Taskmodel } from '../model/task-model';
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-task',
@@ -24,5 +23,8 @@ add(){
       this.taskdetails = '';
     }
 
+}
+Delete(index:number){
+this.tasks.splice(index,1)
 }
 }

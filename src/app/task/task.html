@@ -3,19 +3,19 @@
     <h2>Task Tracker</h2>
 
     <div class="task-input">
-      <input type="text" id="taskInput" placeholder="Enter new task..." [(ngModel)]="taskname"/>
-      <input type="text"  id="details" placeholder="Enter Details" [(ngModel)]="taskdetails">
+      <input type="text" id="taskInput" placeholder="Enter new task..." [(ngModel)]="taskname" />
+      <input type="text" id="details" placeholder="Enter Details" [(ngModel)]="taskdetails" required="Enter Details"/>
       <button (click)="add()">Add</button>
     </div>
 
     <div class="task-list">
-    <h2>Tasks:</h2>
-    <div>
-      @for (task of tasks; track $index) {
-        <p><strong> {{ task.name }}</strong> - {{ task.details }}</p>
-      }
+      <h2>Tasks:</h2>
+        @for (task of tasks; track $index) {
+        <p>
+          <strong>{{$index+1}} {{ task.name }}</strong> - {{ task.details }}
+          <button (click)="Delete($index)" class="delete-btn ">Delete</button>
+        </p>
+        }
     </div>
-  </div>
-   
   </div>
 </body>
