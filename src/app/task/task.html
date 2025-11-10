@@ -1,0 +1,21 @@
+<body>
+  <div class="task-container">
+    <h2>Task Tracker</h2>
+
+    <div class="task-input">
+      <input type="text" id="taskInput" placeholder="Enter new task..." [(ngModel)]="taskname"/>
+      <input type="text"  id="details" placeholder="Enter Details" [(ngModel)]="taskdetails">
+      <button (click)="add()">Add</button>
+    </div>
+
+    <div class="task-list">
+    <h2>Tasks:</h2>
+    <div>
+      @for (task of tasks; track $index) {
+        <p><strong> {{ task.name }}</strong> - {{ task.details }}</p>
+      }
+    </div>
+  </div>
+   
+  </div>
+</body>
